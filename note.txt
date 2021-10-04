@@ -1,0 +1,65 @@
+Hãy thử tưởng tượng, khi bạn đi làm ở công ty, trong đó có bạn A đã làm 1 project từ khá lâu rồi, và bạn vào nhóm
+sẽ tiếp tục làm project đó:
++ Nếu ko có github -> bạn phải copy folder của bạn A rồi paste vào máy cá nhân của mình, nhưng ngặt cái, khi bạn chỉnh sửa,
+sửa đỏi các thứ, thì bên bạn A đều ko biết, sau này 2 người có rất nhiều thứ làm khác nhau, ko thống nhất, thì phải có vài
+cuộc họp để trao đổi, thống nhất -> phiền phức, đó là chỉ TH 2 ng làm 1 project thôi, nếu mà n người, thì hãy tưởng tượng xem,
+nó sẽ rối tung rối mù lên
+
+=> dùng git&github, github là nơi lưu trữ trung tâm, lưu các project, dự án của các công ty mà dân cntt phải dùng tới nó hằng
+ngày và các công ty chuyên nghiệp và nhà ứng dụng đề muốn tuyển ng biết làm git&github, lúc này thì nhiều ng làm project sẽ làm
+cùng 1 project và mọi thay đổi sẽ được lưu lại trên github -> đồng nhất, nếu có gì sai thì mình sẽ liên hệ cho ng kia liền
+
+=> ta có thể tải git desktop, nhờ đó chúng ta có thể thấy sự thay đổi của project một cách trực quan, nhưng các nhà tuyển dụng
+lại ko đánh giá cao việc làm đó, nó muốn chúng ta phải xử lý trên command line hay command prompt
+
+-> quá trình như sau:
+1. Bạn A có 1 project, bản sẽ đưa nó lên github:
+- B1: Tạo tài khoản github, tạo một project background-generator, lấy đường dẫn https tới project github
+- B2: Mở cmd và cd tới thư mục project cần đưa lên github và thực hiện câu lệnh:
+C:\Users\loclt>cd "C:\Users\loclt\PycharmProjects\Git&Github"
+C:\Users\loclt\PycharmProjects\Git&Github>dir (dùng lệnh dir để xem các file trong thư mục có chính xác ko)
+#Kết quả:
+10/04/2021  10:51 AM    <DIR>          .
+10/04/2021  10:51 AM    <DIR>          ..
+10/04/2021  10:45 AM    <DIR>          .idea
+09/16/2021  10:23 AM             8,254 index.html
+10/04/2021  10:51 AM             1,849 note.txt
+09/11/2021  07:46 PM                21 script.js
+09/08/2021  09:13 AM                37 style.css
+               4 File(s)         10,161 bytes
+               3 Dir(s)  22,853,828,608 bytes free
+C:\Users\loclt\PycharmProjects\Git&Github>git clone https://github.com/loclethanhm10hcmus/background-generator.git
+(clone this project from github.com: sao chép dự án này từ github)
+#Kết quả:
+Cloning into 'background-generator'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+#Lúc này, trong project xuất hiện folder background-generator(vì ta clone nó phía trên)
+bên trong đó có folder .git(ko mở được) , và cái folder .git này cực kì quan trọng, nó
+cho phép chúng ta có thể giao tiếp với Github
+- B3: Kéo các file/folder bên ngoài vào trong project background-generator
+- B4: Truy cập vào bên trong thư mục project trên:
+C:\Users\loclt\PycharmProjects\Git&Github>cd "background-generator"
+- B5: C:\Users\loclt\PycharmProjects\Git&Github\background-generator>git status
+# Kết quả:
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+        index.html
+        note.txt
+        script.js
+        style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+#Nó bảo: có những file ko được kiểm tra gồm 5 mục phía trên, sử dụng git add to include
+while you will be conmitted
+- B6: Làm theo đó, chúng ta làm những câu lệnh sau:
+C:\Users\loclt\PycharmProjects\Git&Github\background-generator>git add ".idea/"
+C:\Users\loclt\PycharmProjects\Git&Github\background-generator>git add "index.html"
+
+
